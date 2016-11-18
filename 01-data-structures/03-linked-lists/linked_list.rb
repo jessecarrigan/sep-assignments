@@ -43,6 +43,17 @@ class LinkedList
 
   # This method removes `node` from the list and must keep the rest of the list intact.
   def delete(node)
+    if node == @head
+      remove_front
+    elsif node == @tail
+      remove_tail
+    else
+      current = @head
+      while current.next != node
+        current = current.next
+      end
+      current.next = node.next
+    end
   end
 
   # This method adds `node` to the front of the list and must set the list's head to `node`.
