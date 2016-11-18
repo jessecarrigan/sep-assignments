@@ -34,6 +34,11 @@ class LinkedList
 
   # This method prints out a representation of the list.
   def print
+    current = @head
+    while !current.nil?
+      puts current.data
+      current = current.next
+    end
   end
 
   # This method removes `node` from the list and must keep the rest of the list intact.
