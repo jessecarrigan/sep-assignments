@@ -20,6 +20,16 @@ class LinkedList
 
   # This method removes the last node in the lists and must keep the rest of the list intact.
   def remove_tail
+    current = @head
+    if @head == @tail
+      @head = nil
+      @tail = nil
+    else
+      while current.next != @tail
+        current = current.next
+      end
+      @tail = current
+    end
   end
 
   # This method prints out a representation of the list.
